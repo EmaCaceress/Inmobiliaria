@@ -1,0 +1,26 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"extends": ["prettier", "plugin:react/recommended", "plugin:react/jsx-runtime", "standard"],
+	"overrides": [],
+	"parserOptions": {
+		"ecmaVersion": "latest"
+	},
+	"plugins": ["react"],
+	"rules": {
+		"indent": [2, "tab"],
+		"no-mixed-spaces-and-tabs": 0,
+		"semi": [1, "always"],
+		"space-before-function-paren": ["error", "never"],
+		"no-tabs": 0,
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error"
+	}
+}
