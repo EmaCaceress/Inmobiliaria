@@ -1,0 +1,47 @@
+.aboutUs {
+	display: flex;
+	padding: 7vh 5vw 0 5vw;
+
+	&__container {
+		padding: 0 40px 40px 40px;
+
+		&__title {
+			font-size: 30px;
+			margin-bottom: 10px;
+			text-align: center;
+			color: #007aff;
+			font-weight: bold;
+		}
+
+		&__description {
+		}
+	}
+
+	&__img {
+		box-shadow: 5px 3px 10px rgba(0, 0, 0, 30%);
+		height: 300px;
+		width: 40vw;
+	}
+}
+
+@media (max-width: 700px) {
+	.aboutUs {
+		flex-direction: column;
+		text-align: center;
+		padding: 20px 10px 10px 10px;
+
+		&__container {
+			padding: 0 0 10px 0;
+			text-align: center;
+
+			&__title {
+				font-size: 25px;
+			}
+		}
+
+		&__img {
+			width: auto;
+			height: 150px;
+		}
+	}
+}

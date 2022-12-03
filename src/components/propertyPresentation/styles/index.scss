@@ -1,0 +1,50 @@
+.PropertyPresentation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f5f5;
+	padding: 2rem;
+
+	&__body {
+		text-align: center;
+		position: relative;
+		right: 10vw;
+		padding: 20px;
+		width: 400px;
+		background: white;
+
+		&__button {
+			width: 50%;
+			height: 35px;
+			padding: 5px;
+			font-size: 15px;
+			color: white;
+			font-weight: bold;
+			border: 0px;
+			background-color: #007aff;
+			border-radius: 5px;
+		}
+	}
+
+	&__img {
+		box-shadow: 5px 3px 10px rgb(0 0 0 / 30%);
+		height: 350px;
+		width: 50vw;
+	}
+}
+
+@media (max-width: $mobile) {
+	.PropertyPresentation {
+		flex-direction: column;
+
+		&__body {
+			right: 0px;
+			bottom: 50px;
+			width: 70vw;
+		}
+
+		&__img {
+			width: 90vw;
+		}
+	}
+}
