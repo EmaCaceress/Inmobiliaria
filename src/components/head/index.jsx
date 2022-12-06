@@ -1,40 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const HeadHome = () => {
+const HeadAside = ({ zones }) => {
+	const [city, setCities] = useState([])
+
+	const onProvince = (event) => {
+		const result = zones.find(obj => event.target.value === obj.province)
+		console.log("hola", result)
+
+		setCities(result.cities)
+	}
 	return (
-		<section className="sectionHome">
-			<div className="sectionHome__headerHome">
-				<p className="sectionHome__headerHome__title">Encuentra tu Hogar</p>
-				<form className="sectionHome__headerHome__form">
-					<p className="sectionHome__headerHome__form__title">Inserte su busqueda</p>
-					<select name="operation" className="sectionHome__headerHome__form__input">
-						<option disabled selected>
-							Operacion
-						</option>
-						<option value="rental">Alquiler</option>
-						<option value="sale">Venta</option>
-					</select>
-					<br />
-					<select name="province" className="sectionHome__headerHome__form__input">
-						<option disabled selected>
-							Provincia
-						</option>
-						<option value="rental">Buenos Aires</option>
-						<option value="sale">Jujuy</option>
-					</select>
-					<br />
-					<select name="city" className="sectionHome__headerHome__form__input">
-						<option disabled selected>
-							Ciudad
-						</option>
-						<option value="rental">Berazategui</option>
-						<option value="sale">Quilmes</option>
-					</select>
-					<br />
-					<button className="sectionHome__headerHome__form__button">Buscar</button>
-				</form>
-			</div>
-		</section>
+		<>
+			<p className="products__aside__title">Alquileres</p>
+			<p className="products__aside__result">32.000 resultados</p>
+			<form className="products__aside__form">
+				<p className="products__aside__form__title">Inserte su busqueda</p>
+				<select name="operation" className="products__aside__form__select">
+					<option className="products__aside__form__select__options" disabled selected>
+						Operacion
+					</option>
+					<option className="products__aside__form__select__options" value="rental">Alquiler</option>
+					<option className="products__aside__form__select__options" value="sale">Venta</option>
+				</select>
+				<br />
+				<select onChange={onProvince} name="province" className="products__aside__form__select">
+					<option disabled selected>
+						Provincia
+					</option>
+					{
+						zones.map(obj =>
+							<option className="products__aside__form__select__options" value={obj.province} >{obj.province}</option>
+						)
+					}
+				</select>
+				<br />
+				<select name="city" className="products__aside__form__select">
+					<option className="products__aside__form__select__options" disabled selected>
+						Ciudad
+					</option>
+					{
+						city !== []
+						&& city.map(obj =>
+							<option className="products__aside__form__select__options" value={obj}>{obj}</option>
+						)
+
+					}
+				</select>
+				<br />
+				<div className="products__aside__form__price">
+					<input className="products__aside__form__price__input" placeholder='minimo'></input><div>-</div><input className="products__aside__form__price__input" placeholder='maximo'></input>
+				</div>
+				<button className="products__aside__form__button">Buscar</button>
+			</form>
+		</>
 	);
 };
-export default HeadHome;
+export default HeadAside;

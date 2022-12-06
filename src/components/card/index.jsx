@@ -16,7 +16,7 @@ const CardProperty = ({ picture, zone, title, price, description }) => {
 				<div className="Cardproperty__main__header">
 					<p className="Cardproperty__main__header__zone">{zone}</p>
 					<p className="Cardproperty__main__header__title">{title}</p>
-					<div className="Cardproperty__main__header__price">{price}</div>
+					<p className="Cardproperty__main__header__price">{price}</p>
 					<p className="Cardproperty__main__header__description">{description}</p>
 				</div>
 				<div className="Cardproperty__main__body">
